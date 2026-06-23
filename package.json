@@ -1,0 +1,13 @@
+{
+  "name": "@localitas/pubsub",
+  "version": "0.1.0",
+  "description": "Browser WebSocket client for Localitas DurablePubSub",
+  "main": "dist/localitas-pubsub.js",
+  "module": "src/index.js",
+  "license": "MIT",
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --minify --outfile=dist/localitas-pubsub.min.js --format=iife --global-name=LocalitasPubSub",
+    "test": "node test/pubsub.test.js"
+  }
+}
