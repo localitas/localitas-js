@@ -242,6 +242,9 @@ class LocalitasPubSub {
       this.reconnectInterval * Math.pow(1.5, this._reconnectAttempts - 1),
       this.maxReconnectInterval
     );
+    if (delay >= this.maxReconnectInterval) {
+      this._reconnectAttempts = 0;
+    }
     this._emit('reconnecting', { attempt: this._reconnectAttempts, delay: delay });
     setTimeout(() => this.connect(), delay);
   }
