@@ -8,7 +8,7 @@
  * auto-reconnects on disconnect, resuming from its last cursor position.
  *
  * Usage:
- *   const pubsub = new LocalitasPubSub({
+ *   const pubsub = new PubSubWS({
  *     url: 'ws://localhost:8080/apps/cache/ws/my-cache',
  *     token: 'your-api-token',
  *   });
@@ -23,7 +23,7 @@
  *   pubsub.on('disconnected', () => console.log('disconnected'));
  */
 
-class LocalitasPubSub {
+class PubSubWS {
   /**
    * Create a new DurablePubSub client.
    *
@@ -258,7 +258,7 @@ class LocalitasPubSub {
 
 // Export for both CommonJS and browser global
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { LocalitasPubSub };
+  module.exports = { PubSubWS };
 } else if (typeof window !== 'undefined') {
-  window.LocalitasPubSub = LocalitasPubSub;
+  window.PubSubWS = PubSubWS;
 }
